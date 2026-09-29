@@ -8,6 +8,7 @@
 #define BUFFER_SIZE 4096
 int main(int argc, char* argv[])
 {
+	printf("PID: %d\n", getpid());
 	char buffer[BUFFER_SIZE + 1]; // extra byte for '\0'
 	if (argc != 3)
 	{
@@ -80,7 +81,8 @@ int main(int argc, char* argv[])
 	{
 		int opt = -1;
 		puts("secinspect utility interactive mode");
-		printf("1. fstat %s\n2. read starting at some offset\nopt: ", argv[2]);
+		printf("1. fstat %s\n2. read starting at some offset\n3. demo fd 0 1 and 2\n4. redirect output to dup2.txt\nopt: ",
+		       argv[2]);
 		if (scanf("%d", &opt) != 1)
 		{
 			fprintf(stderr, "input error");
@@ -172,6 +174,43 @@ int main(int argc, char* argv[])
 			}
 			buffer[bytes] = '\0'; // null terminate read
 			printf("Read %zd bytes from %s.\nDATA:\n%s", bytes, argv[2], buffer);
+			break;
+		}
+		case 3:
+		{
+			puts("File Descriptors available to process");
+			printf("stdin  = %d\n", STDIN_FILENO);  // 0
+			printf("stdout = %d\n", STDOUT_FILENO); // 1
+			printf("stderr = %d\n", STDERR_FILENO); // 2
+
+			write(STDOUT_FILENO, "Write to stdout\n", 16);
+			write(STDERR_FILENO, "Write to stderr\n", 16);
+			break;
+		}
+		case 4:
+		{
+			int fd2 = open("dup2.txt", O_RDWR | O_CREAT | O_TRUNC, 0644);
+			if (fd2 < 0)
+			{
+				perror("open");
+				break;
+			}
+
+			printf("dup2.txt opened as fd %d\n", fd2);
+			printf("redirecting stdout -> dup2.txt ...\n");
+			fflush(stdout);
+
+			if (dup2(fd2, STDOUT_FILENO) == -1)
+			{
+				perror("dup2");
+				close(fd2);
+				break;
+			}
+
+			close(fd2); // fd 1 now covers the file
+
+			printf("Hello from dup2()!!\n"); // goes into dup2.txt
+			fflush(stdout);
 			break;
 		}
 		default: return 0;
