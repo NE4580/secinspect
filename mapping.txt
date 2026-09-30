@@ -1,0 +1,25 @@
+5922ceaa5000-5922ceaa6000 r--p 00000000 103:06 525433                    /home/enn/Documents/Programming/cxx/assignments/systems programming/w001_q1-2/secinspect
+5922ceaa6000-5922ceaa7000 r-xp 00001000 103:06 525433                    /home/enn/Documents/Programming/cxx/assignments/systems programming/w001_q1-2/secinspect
+5922ceaa7000-5922ceaa8000 r--p 00002000 103:06 525433                    /home/enn/Documents/Programming/cxx/assignments/systems programming/w001_q1-2/secinspect
+5922ceaa8000-5922ceaa9000 r--p 00002000 103:06 525433                    /home/enn/Documents/Programming/cxx/assignments/systems programming/w001_q1-2/secinspect
+5922ceaa9000-5922ceaaa000 rw-p 00003000 103:06 525433                    /home/enn/Documents/Programming/cxx/assignments/systems programming/w001_q1-2/secinspect
+5922fb1e8000-5922fb209000 rw-p 00000000 00:00 0                          [heap]
+770453a00000-770453a28000 r--p 00000000 103:06 1970304                   /usr/lib/x86_64-linux-gnu/libc.so.6
+770453a28000-770453bc0000 r-xp 00028000 103:06 1970304                   /usr/lib/x86_64-linux-gnu/libc.so.6
+770453bc0000-770453c0e000 r--p 001c0000 103:06 1970304                   /usr/lib/x86_64-linux-gnu/libc.so.6
+770453c0e000-770453c12000 r--p 0020e000 103:06 1970304                   /usr/lib/x86_64-linux-gnu/libc.so.6
+770453c12000-770453c14000 rw-p 00212000 103:06 1970304                   /usr/lib/x86_64-linux-gnu/libc.so.6
+770453c14000-770453c21000 rw-p 00000000 00:00 0 
+770453d2a000-770453d2d000 rw-p 00000000 00:00 0 
+770453d4c000-770453d4e000 rw-p 00000000 00:00 0 
+770453d4e000-770453d52000 r--p 00000000 00:00 0                          [vvar]
+770453d52000-770453d54000 r--p 00000000 00:00 0                          [vvar_vclock]
+770453d54000-770453d56000 r-xp 00000000 00:00 0                          [vdso]
+770453d56000-770453d57000 r--p 00000000 103:06 1966734                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+770453d57000-770453d86000 r-xp 00001000 103:06 1966734                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+770453d86000-770453d91000 r--p 00030000 103:06 1966734                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+770453d91000-770453d93000 r--p 0003b000 103:06 1966734                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+770453d93000-770453d94000 rw-p 0003d000 103:06 1966734                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+770453d94000-770453d95000 rw-p 00000000 00:00 0 
+7ffeb289f000-7ffeb28c1000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]
